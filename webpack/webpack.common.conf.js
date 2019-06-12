@@ -28,8 +28,8 @@ const webpackConfig = env => {
     output: {
       publicPath: env === "development" ? "/" : "/",
       path: path.resolve(__dirname, "..", "dist"),
-      filename: "js/[name]-[hash:5].bundle.js",
-      chunkFilename: "js/[name]-[hash:5].chunk.js"
+      filename: env === "development" ? "js/[name]-[hash:5].bundle.js" : "js/[name].[chunkhash:8].js",
+      chunkFilename: env === "development" ? "js/[name]-[hash:5].chunk.js" : "js/[name].[chunkhash:8].js"
     },
     module: {
       rules: [
@@ -54,7 +54,9 @@ const webpackConfig = env => {
             {
               loader: 'url-loader',
               options: {
-                limit: 8192
+                limit: 8192,
+                name: '[name].[ext]',
+                outputPath: 'images/',
               }
             }
           ]

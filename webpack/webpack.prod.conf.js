@@ -10,7 +10,6 @@ const ExtractCSS = new MiniCssExtractPlugin({
 
 const path = require("path");
 
-
 module.exports = {
   mode: "production",
   entry: {
@@ -24,9 +23,11 @@ module.exports = {
   optimization: {
     minimizer: [//压缩js
       new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false
+        uglifyOptions: {
+          output: {
+            comments: false
+          }
+        },
       }),
       new OptimizeCSSAssetsPlugin({})
     ],
@@ -34,12 +35,19 @@ module.exports = {
       name: "manifest"
     },
     splitChunks: {
+      minChunks: 3,
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          priority: -20,
-          chunks: "all"
+          chunks: 'initial',
+          name: 'vendor',
+          test: 'vendor',
+          enforce: true
+        },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
         }
       }
     }

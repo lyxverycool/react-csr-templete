@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "dev": "webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
+    "build": "webpack --env production --config webpack/webpack.common.conf.js --color --progress"
+  },
+  "devDependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router": "5.0.0",
+    "react-router-dom": "5.0.0",
+    "react-hot-loader": "3.1.3",
+    "css-loader": "^1.0.0",
+    "less": "2.7.3",
+    "less-loader": "4.0.5",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.21.0",
+    "file-loader": "1.1.6",
+    "url-loader": "0.5.9",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.3"
+  },
+  "dependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-import": "1.6.1",
+    "babel-plugin-react-transform": "2.0.2",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0"
+  }
+}

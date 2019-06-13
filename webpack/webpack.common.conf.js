@@ -36,14 +36,14 @@ const webpackConfig = env => {
         { test: /\.js$/, exclude: /(node_modules)/, use: jsLoader },
         {
           test: /\.css$/, use: [
-            MiniCssExtractPlugin.loader,
+            env === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader'
           ]
         },
         {
           test: /\.less$/,
           use: [
-            MiniCssExtractPlugin.loader,
+            env === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             'less-loader'
           ]

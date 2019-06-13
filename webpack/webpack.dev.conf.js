@@ -1,9 +1,4 @@
 const webpack = require("webpack");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ExtractCSS = new MiniCssExtractPlugin({
-  filename: 'css/[name].css',
-  chunkFilename: 'css/style.[id].css',
-})
 const path = require("path");
 
 module.exports = {
@@ -21,7 +16,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    ExtractCSS
+    new webpack.NamedModulesPlugin()
   ]
 };

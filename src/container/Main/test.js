@@ -12,7 +12,7 @@ export default class Test extends Component {
       <div className="test">
         222
         <div className='ss'>32233</div>
-        <img src={require('../images/avatar.jpg')} alt="" />
+        <img src={require('../../images/avatar.jpg')} alt="" />
       </div>
     )
   }

@@ -6,7 +6,6 @@ import App from './routes/index'
 
 const app = document.getElementById('app')
 
-
 const render = Component => {
   ReactDOM.render(
     <AppContainer>

@@ -32,7 +32,7 @@ module.exports = {
       new OptimizeCSSAssetsPlugin({})
     ],
     runtimeChunk: {
-      name: "manifest"
+      name: "runtime"
     },
     splitChunks: {
       minChunks: 3,
@@ -45,7 +45,7 @@ module.exports = {
         },
         styles: {
           name: 'styles',
-          test: /\.css$/,
+          test: /\.css|less$/,
           chunks: 'all',
           enforce: true
         }

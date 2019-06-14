@@ -1,9 +1,13 @@
 {
+  "name": "csr-templete",
+  "version": "0.0.1",
+  "description": "csr模板",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js --color --progress"
   },
+  "author": "lyxcool",
   "devDependencies": {
     "react": "16.2.0",
     "react-dom": "16.2.0",

@@ -11,7 +11,7 @@ export default class Test extends Component {
     return (
       <div className="test">
         222
-        <div className='ss'>32233</div>
+        <div className='ss'>22233</div>
         <img src={require('../../images/avatar.jpg')} alt="" />
       </div>
     )

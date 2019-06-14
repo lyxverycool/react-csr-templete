@@ -14,7 +14,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <Link to='/list'>跳转22list</Link>
+        <Link to='/list'>跳转list</Link>
         <Test />
       </div>
     )

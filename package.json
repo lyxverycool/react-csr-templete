@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "dev": "webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
-    "build": "webpack --env production --config webpack/webpack.common.conf.js --color --progress"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
+    "start": "npm run dev",
+    "build": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js --color --progress"
   },
   "devDependencies": {
     "react": "16.2.0",
@@ -38,7 +39,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "babel-runtime": "^6.26.0",
-    "react-imported-component": "^5.5.3",
-    "react-loadable": "git+https://github.com/lyxverycool/react-loadable.git"
+    "cross-env": "^5.2.0",
+    "react-loadable": "5.5.0"
   }
 }

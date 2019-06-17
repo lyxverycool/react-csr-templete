@@ -5,7 +5,11 @@ module.exports = {
   mode: "development",
   devtool: "source-map",
   entry: {
-    app: ['babel-polyfill', 'react-hot-loader/patch', path.resolve(__dirname, '..', 'src/index.js')]
+    app: [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      path.resolve(__dirname, '..', 'src/index.js')
+    ]
   },
   devServer: {
     contentBase: path.join(__dirname, "../dist/"),

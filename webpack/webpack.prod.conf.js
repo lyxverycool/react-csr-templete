@@ -42,12 +42,6 @@ module.exports = {
           name: 'vendor',
           test: 'vendor',
           enforce: true
-        },
-        styles: {
-          name: 'styles',
-          test: /\.css|less$/,
-          chunks: 'all',
-          enforce: true
         }
       }
     }

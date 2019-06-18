@@ -17,6 +17,7 @@ const webpackConfig = env => {
         "react-hot-loader/babel",
         "transform-runtime",
         'transform-class-properties',
+        "transform-decorators-legacy",
         'transform-object-rest-spread'
       ],
       // babelrc: false

@@ -3,7 +3,8 @@ import { hot } from 'react-hot-loader'
 import { Route, Switch } from 'react-router-dom'
 import routes from './router'
 
-class App extends Component {
+@hot(module)
+export default class App extends Component {
   render() {
     const routeWithSubRoutes = (route, index) =>
       <Route
@@ -20,4 +21,3 @@ class App extends Component {
   }
 }
 
-export default hot(module)(App)

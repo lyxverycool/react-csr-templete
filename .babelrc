@@ -11,6 +11,7 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
+    "transform-decorators-legacy",
     "transform-runtime",
     "transform-class-properties",
     "transform-object-rest-spread"

@@ -11,16 +11,7 @@ const webpackConfig = env => {
   let jsLoader = [{
     loader: 'babel-loader',
     options: {
-      presets: [['env', { modules: false }], 'react', 'stage-0'],
       cacheDirectory: true,
-      "plugins": [
-        "react-hot-loader/babel",
-        "transform-runtime",
-        'transform-class-properties',
-        "transform-decorators-legacy",
-        'transform-object-rest-spread'
-      ],
-      // babelrc: false
     }
   }]
 

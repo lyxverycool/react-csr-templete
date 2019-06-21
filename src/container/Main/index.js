@@ -16,7 +16,7 @@ export default class extends Component {
     console.log(this.props)
     return (
       <div>
-        <Link to='/list'>跳转list</Link>
+        <Link to='/list'>跳转list页面</Link>
       </div>
     )
   }

@@ -3,9 +3,29 @@ const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-
+const Dotenv = require('dotenv')
+const DotenvWebpack = require('dotenv-webpack')
 const productionConfig = require("./webpack.prod.conf.js"); // 引入生产环境配置文件
 const developmentConfig = require("./webpack.dev.conf.js"); // 引入开发环境配置文件
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const envPath = path.resolve(process.cwd(), 'env')
+Dotenv.config({
+  path: `${envPath}/common.env`
+})
+
+Dotenv.config({
+  path: `${envPath}/${NODE_ENV}.env`
+})
+
+const commonDot = new DotenvWebpack({
+  path: `${envPath}/common.env`,
+  systemvars: true
+})
+
+const nodeEnvDot = new DotenvWebpack({
+  path: `${envPath}/${NODE_ENV}.env`,
+  systemvars: true
+})
 
 const webpackConfig = env => {
   let jsLoader = [{
@@ -37,7 +57,17 @@ const webpackConfig = env => {
           use: [
             env === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
-            'less-loader'
+            {
+              loader: 'less-loader',
+              options: {
+                modifyVars: {
+                  'primary-color': '#1DA57A;',
+                  'link-color': '#1DA57A;',
+                  'border-radius-base': '2px',
+                },
+                javascriptEnabled: true,
+              }
+            }
           ]
         },
         {
@@ -68,7 +98,9 @@ const webpackConfig = env => {
           removeComments: true,
           collapseWhitespace: true
         }
-      })
+      }),
+      commonDot,
+      nodeEnvDot
     ]
   }
 }

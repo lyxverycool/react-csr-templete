@@ -13,7 +13,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "../dist/"),
-    port: 8000,
+    port: 8081,
     hot: true,
     overlay: true,
     historyApiFallback: true

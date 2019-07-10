@@ -28,13 +28,6 @@ const nodeEnvDot = new DotenvWebpack({
 })
 
 const webpackConfig = env => {
-  let jsLoader = [{
-    loader: 'babel-loader',
-    options: {
-      cacheDirectory: true,
-    }
-  }]
-
   return {
     entry: {},
     output: {
@@ -45,7 +38,7 @@ const webpackConfig = env => {
     },
     module: {
       rules: [
-        { test: /\.js$/, exclude: /(node_modules)/, use: jsLoader },
+        { test: /\.js$/, exclude: /(node_modules)/, use: 'babel-loader' },
         {
           test: /\.css$/, use: [
             env === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -99,6 +92,7 @@ const webpackConfig = env => {
           collapseWhitespace: true
         }
       }),
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru|zh-cn|en/),
       commonDot,
       nodeEnvDot
     ]

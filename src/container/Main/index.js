@@ -15,16 +15,12 @@ export default class extends Component {
 
   getBlog = () => {
     const apiUrl = process.env.API_URL
-    const params = {
-      page: 1,
-      limit: 8
-    }
+    const params = {}
     console.log(apiUrl)
     fetch({
-      url: `${apiUrl}/api/blog/getBlogList`,
+      url: `${apiUrl}/example/testData`,
       params
     }).then(res => {
-      if (!res.status) return
       console.log(res)
     })
   }

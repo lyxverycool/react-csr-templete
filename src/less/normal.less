@@ -1,0 +1,110 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html,
+body {
+  color: @text-color;
+  background-color: @bg-color;
+  font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif !important;
+  font-size: 14px;
+}
+
+
+a {
+  text-decoration: none !important;
+  color: @text-color;
+
+  &:hover {
+    color: @text-color;
+  }
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+pre {
+  display: inline;
+  color: #a1a5a9;
+  background-color: #2e3238;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: none;
+  border-radius: 4px;
+  line-height: 16px;
+  font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif !important;
+}
+
+.clearfix {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.ellipsis {
+  -o-text-overflow: ellipsis;
+  word-break: normal;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.noselect {
+  user-select: none;
+}

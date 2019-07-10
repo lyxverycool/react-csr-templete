@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { DatePicker, Button } from 'antd';
+import { DatePicker } from 'antd';
 import fetch from '../../utils/fetch'
 import screenSize from '../../component/ScreenSize'
-import '../../assets/index.less'
-import './index.less'
+import './style.less'
 
 @screenSize
 export default class extends Component {
@@ -13,10 +12,13 @@ export default class extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    this.getBlog()
+  }
+
   getBlog = () => {
     const apiUrl = process.env.API_URL
     const params = {}
-    console.log(apiUrl)
     fetch({
       url: `${apiUrl}/example/testData`,
       params
@@ -29,8 +31,8 @@ export default class extends Component {
     return (
       <div>
         <Link to='/list'>跳转list页面</Link>
-        <div>
-          <Button type="primary" onClick={this.getBlog}>获取数据</Button>
+        <div className='flexBox'>
+          <span>222</span>
         </div>
         <DatePicker />
       </div>

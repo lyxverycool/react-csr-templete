@@ -51,6 +51,21 @@ const webpackConfig = env => {
             env === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('autoprefixer')({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9'
+                    ]
+                  })
+                ]
+              }
+            },
+            {
               loader: 'less-loader',
               options: {
                 modifyVars: {

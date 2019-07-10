@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.less'
+import './style.less'
 
 export default class List extends Component {
   render() {
@@ -7,7 +7,7 @@ export default class List extends Component {
       <div className='list'>
         list页面
       </div>
-    );
+    )
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { DatePicker } from 'antd';
+import { Rate } from 'antd';
 import fetch from '../../utils/fetch'
 import screenSize from '../../component/ScreenSize'
 import './style.less'
@@ -30,11 +30,9 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <img src={require('../../images/avatar.jpg')} alt="" />
         <Link to='/list'>跳转list页面</Link>
-        <div className='flexBox'>
-          <span>222</span>
-        </div>
-        <DatePicker />
+        <Rate allowHalf defaultValue={2.5} />
       </div>
     )
   }

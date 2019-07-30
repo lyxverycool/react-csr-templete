@@ -1,29 +1,25 @@
 import axios from 'axios'
-import { message } from 'antd'
 
-const API_PATH = process.env.API_PATH || ''
-
-const fetch = ({ url, params, method = 'GET', data }) => {
-  console.log(url)
+const fetch = ({
+  url, params, method = 'GET', data,
+}) => {
   const options = {
-    url: url,
+    url,
     method,
     params,
     data,
     timeout: 10000,
-    withCredentials: true
+    withCredentials: true,
   }
   if (method === 'GET') {
     options.params = {
       ...options.params,
-      t: new Date().getTime()
+      t: new Date().getTime(),
     }
   }
   return axios(options)
-    .then(res => {
-      return res.data
-    })
-    .catch(err => {
+    .then(res => res.data)
+    .catch((err) => {
       console.warn(err)
     })
 }

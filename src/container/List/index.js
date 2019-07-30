@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
 import './style.less'
 
-export default class List extends Component {
-  render() {
-    return (
-      <div className='list'>
-        list页面
-      </div>
-    )
-  }
-}
+const List = () => (
+  <div className="list">
+    list页面
+  </div>
+)
 
+export default List

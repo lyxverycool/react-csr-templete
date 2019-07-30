@@ -1,25 +1,25 @@
-const webpack = require("webpack");
-const path = require("path");
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  mode: "development",
-  devtool: "source-map",
+  mode: 'development',
+  devtool: 'source-map',
   entry: {
     app: [
       'babel-polyfill',
       'react-hot-loader/patch',
-      path.resolve(__dirname, '..', 'src/index.js')
-    ]
+      path.resolve(__dirname, '..', 'src/index.js'),
+    ],
   },
   devServer: {
-    contentBase: path.join(__dirname, "../dist/"),
+    contentBase: path.join(__dirname, '../dist/'),
     port: 8081,
     hot: true,
     overlay: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+    new webpack.NamedModulesPlugin(),
+  ],
 };

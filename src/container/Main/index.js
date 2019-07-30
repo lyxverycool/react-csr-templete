@@ -6,7 +6,7 @@ import screenSize from '../../component/ScreenSize'
 import './style.less'
 
 @screenSize
-export default class extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -21,8 +21,8 @@ export default class extends Component {
     const params = {}
     fetch({
       url: `${apiUrl}/example/testData`,
-      params
-    }).then(res => {
+      params,
+    }).then((res) => {
       console.log(res)
     })
   }
@@ -31,10 +31,11 @@ export default class extends Component {
     return (
       <div>
         <img src={require('../../images/avatar.jpg')} alt="" />
-        <Link to='/list'>跳转list页面</Link>
+        <Link to="/list">跳转list页面</Link>
         <Rate allowHalf defaultValue={2.5} />
       </div>
     )
   }
 }
 
+export default Main

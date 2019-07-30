@@ -5,14 +5,13 @@ import App from './routes/index'
 
 const app = document.getElementById('app')
 
-const render = Component => {
+const render = (Component) => {
   ReactDOM.render(
     <BrowserRouter>
       <Component />
     </BrowserRouter>,
-    app
+    app,
   )
 }
 
 render(App)
-

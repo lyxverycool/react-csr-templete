@@ -18,6 +18,9 @@
     [
       "import",
       [{
+        "libraryName": "lyxcool-test",
+        "style": true
+      }, {
         "libraryName": "antd",
         "style": true
       }]

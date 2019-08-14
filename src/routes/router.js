@@ -1,4 +1,4 @@
-import loadable from './loadable'
+import loadable from '@loadable/component'
 
 const Main = loadable(() => import('../container/Main/index'))
 const List = loadable(() => import('../container/List/index'))

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { hot } from 'react-hot-loader/root';
 import { Link } from 'react-router-dom'
 import { Rate } from 'antd';
 import fetch from '../../utils/fetch'
-import screenSize from '../../component/ScreenSize'
+import screen from '../../component/ScreenSize'
 import './style.less'
 
-@screenSize
+@hot
+@screen
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +30,12 @@ class Main extends Component {
   }
 
   render() {
+    const { screenSize } = this.props
+    console.log(screenSize)
     return (
       <div>
-        <img src={require('../../images/avatar.jpg')} alt="" />
-        <Link to="/list">跳转list页面</Link>
-        <Rate allowHalf defaultValue={2.5} />
+        <Link to="/list">跳转list页33</Link>
+        <Rate allowHalf defaultValue={3.5} />
       </div>
     )
   }

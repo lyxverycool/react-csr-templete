@@ -10,6 +10,7 @@
   },
   "author": "lyxcool",
   "devDependencies": {
+    "@loadable/component": "^5.10.2",
     "autoprefixer": "7.2.4",
     "babel-eslint": "^10.0.2",
     "clean-webpack-plugin": "^0.1.19",
@@ -30,7 +31,6 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-hot-loader": "4.11.1",
-    "react-loadable": "5.5.0",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
     "style-loader": "^0.21.0",

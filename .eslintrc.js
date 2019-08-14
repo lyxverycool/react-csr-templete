@@ -23,6 +23,7 @@ module.exports = {
     "jsx-a11y"
   ],
   rules: {
+    'react/prop-types': 0, //无需验证props
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "linebreak-style": [0, "error", "windows"],

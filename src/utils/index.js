@@ -1,19 +1,16 @@
-const debounce = (func, delay = 2000) => {
-  let timer = null;
+// 节流
 
-  return function test(fn, ...args) {
-    const context = this;
-    if (timer) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        fn.apply(context, args);
-      }, delay);
-    } else {
-      timer = setTimeout(() => {
-        fn.apply(context, args);
-      }, delay);
-    }
-  }
-}
+const throttle = (fn, delay = 500) => {
+  let flag = true;
+  return (...args) => {
+    if (!flag) return;
+    flag = false;
+    setTimeout(() => {
+      fn.apply(this, args);
+      flag = true;
+    }, delay);
+  };
+};
 
-export default debounce
+
+export default throttle

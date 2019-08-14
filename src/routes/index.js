@@ -1,5 +1,4 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import { Route, Switch } from 'react-router-dom';
 import routes from './router';
 
@@ -19,8 +18,4 @@ const App = () => {
   );
 }
 
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const AppContainer = NODE_ENV === 'development' ? hot(module)(App) : App;
-
-export default AppContainer;
+export default App

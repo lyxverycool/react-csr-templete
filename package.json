@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
-    "build": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js --color --progress",
+    "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js --color --progress",
+    "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js --color --progress",
     "lint": "eslint --ext .js --ext .jsx src"
   },
   "author": "lyxcool",

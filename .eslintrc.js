@@ -24,6 +24,7 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 0, //无需验证props
+    "react/destructuring-assignment": 0, //解构赋值
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "linebreak-style": [0, "error", "windows"],

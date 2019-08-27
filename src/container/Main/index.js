@@ -20,10 +20,8 @@ class Main extends Component {
 
   getBlog = () => {
     const apiUrl = process.env.API_URL
-    const params = {}
     fetch({
       url: `${apiUrl}/example/testData`,
-      params,
     }).then((res) => {
       console.log(res)
     })

@@ -1,29 +1,22 @@
 {
-  "presets": [
-    "react",
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
     [
-      "env",
+      "@babel/plugin-proposal-decorators",
       {
-        "modules": false
+        "legacy": true
       }
     ],
-    "stage-0"
-  ],
-  "plugins": [
-    "react-hot-loader/babel",
-    "transform-decorators-legacy",
-    "transform-runtime",
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    [
-      "import",
-      [{
-        "libraryName": "lyxcool-test",
-        "style": true
-      }, {
-        "libraryName": "antd",
-        "style": true
-      }]
-    ]
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    ["import", {
+      "libraryName": "antd",
+      "style": true,
+    }, "antd"],
+    ["import", {
+      "libraryName": "lyxcool-test",
+      "style": true
+    }, "lyxcool-test"],
   ]
 }

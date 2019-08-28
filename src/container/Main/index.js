@@ -11,7 +11,9 @@ import './style.less'
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      message: '',
+    };
   }
 
   componentDidMount() {
@@ -23,7 +25,11 @@ class Main extends Component {
     fetch({
       url: `${apiUrl}/example/testData`,
     }).then((res) => {
-      console.log(res)
+      if (res.data.code === 1) {
+        this.setState({
+          message: res.data.message,
+        })
+      }
     })
   }
 
@@ -32,7 +38,9 @@ class Main extends Component {
     console.log(screenSize)
     return (
       <div>
-        <Link to="/list">跳转list页33</Link>
+        <Link to="/list">跳转list页</Link>
+        <br />
+        {this.state.message}
         <Rate allowHalf defaultValue={3.5} />
       </div>
     )

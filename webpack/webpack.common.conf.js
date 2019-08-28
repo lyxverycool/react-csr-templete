@@ -1,15 +1,17 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const Dotenv = require('dotenv');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const path = require('path')
+const Dotenv = require('dotenv')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const DotenvWebpack = require('dotenv-webpack');
-const productionConfig = require('./webpack.prod.conf.js'); // 引入生产环境配置文件
-const developmentConfig = require('./webpack.dev.conf.js');
-// 引入开发环境配置文件
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const envPath = path.resolve(process.cwd(), 'env');
+const productionConfig = require('./webpack.prod.conf.js')
+const developmentConfig = require('./webpack.dev.conf.js')
+
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const envPath = path.resolve(process.cwd(), 'env')
+
 Dotenv.config({
   path: `${envPath}/common.env`,
 });
@@ -115,6 +117,7 @@ const webpackConfig = env => ({
       },
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru|zh-cn|en/),
+    new ProgressBarPlugin(),
     commonDot,
     nodeEnvDot,
   ],

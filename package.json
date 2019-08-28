@@ -4,9 +4,9 @@
   "description": "csr模板",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --color --progress",
-    "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js --color --progress",
-    "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js --color --progress",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js",
     "lint": "eslint --ext .js --ext .jsx src"
   },
   "author": "lyxcool",
@@ -29,6 +29,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "2.0.10",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-hot-loader": "4.11.1",

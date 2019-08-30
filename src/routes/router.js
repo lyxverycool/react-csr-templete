@@ -5,7 +5,7 @@ const List = loadable(() => import('../container/List/index'))
 
 export default [
   {
-    path: '/',
+    path: ['/', '/index'],
     exact: true,
     component: Main,
   },

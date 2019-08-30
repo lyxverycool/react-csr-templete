@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');// js压缩
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // css压缩
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const ExtractCSS = new MiniCssExtractPlugin({
   filename: 'css/[name].[hash].css',
@@ -51,6 +52,7 @@ module.exports = {
       root: path.resolve(__dirname, '../'),
       verbose: true,
     }),
+    new BundleAnalyzerPlugin(),
     ExtractCSS,
   ],
 };

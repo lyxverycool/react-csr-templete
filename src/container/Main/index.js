@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader/root';
 import { Link } from 'react-router-dom'
-import { Rate } from 'antd';
+import { Card } from 'antd';
 import fetch from '../../utils/fetch'
 import screen from '../../component/ScreenSize'
 import './style.less'
@@ -41,7 +41,11 @@ class Main extends Component {
         <Link to="/list">跳转list页</Link>
         <br />
         {this.state.message}
-        <Rate allowHalf defaultValue={3.5} />
+        <Card title="Default size card" style={{ width: 300 }}>
+          <p>Card content</p>
+          <p>Card content</p>
+          <p>Card content</p>
+        </Card>
       </div>
     )
   }

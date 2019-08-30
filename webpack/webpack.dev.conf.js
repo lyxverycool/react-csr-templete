@@ -13,6 +13,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, '../dist/'),
+    host: '0.0.0.0',
     port: 8081,
     hot: true,
     overlay: true,

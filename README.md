@@ -1,6 +1,6 @@
 #运用技术栈
 
-`react v16.8 + webpack v4.x+ react-router-dom v5.0.0 + antd`
+`react v16.8 + webpack v4.x+ react-router-dom v5.0.0 + babel v7 + antd`
 
 #环境目录
 
@@ -22,4 +22,4 @@
 
 `env==production 打包在dist 目录下`
 
-
+#tips Antd v3.8.4 后版本打包会引入大小差不多为400多k的Icon包，导致体积过大

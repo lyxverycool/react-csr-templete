@@ -1,27 +1,22 @@
 module.exports = {
+  extends: 'airbnb',
+  parser: 'babel-eslint',
   env: {
-    browser: true,
-    es6: true,
-  },
-  parser: "babel-eslint",
-  extends: [
-    'airbnb',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    'browser': true,
+    'node': true,
   },
   plugins: [
     'react',
-    "jsx-a11y"
+    'jsx-a11y', // 交互相关
+    'import'
   ],
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './webpack/webpack.common.conf.js',
+      },
+    }
+  },
   rules: {
     'react/prop-types': 0, //无需验证props
     "react/destructuring-assignment": 0, //解构赋值

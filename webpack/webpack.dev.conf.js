@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: [
-      'babel-polyfill',
+      '@babel/polyfill',
       'react-hot-loader/patch',
       path.resolve(__dirname, '..', 'src/index.js'),
     ],

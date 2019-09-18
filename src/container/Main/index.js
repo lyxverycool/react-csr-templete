@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { hot } from 'react-hot-loader/root';
 import { Link } from 'react-router-dom'
 import { Card } from 'antd';
-import fetch from '../../utils/fetch'
-import screen from '../../component/ScreenSize'
+import fetch from '~/utils/fetch'
+import screen from '@/ScreenSize'
 import './style.less'
 
 @hot

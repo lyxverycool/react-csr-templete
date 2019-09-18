@@ -10,7 +10,6 @@
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-transform-runtime",
     "@babel/plugin-proposal-class-properties",
-    ["react-hot-loader/babel"],
     ["import", {
       "libraryName": "antd",
       "style": true,
@@ -19,5 +18,12 @@
       "libraryName": "lyxcool-test",
       "style": true
     }, "lyxcool-test"],
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+      ]
+    }
+  }
 }

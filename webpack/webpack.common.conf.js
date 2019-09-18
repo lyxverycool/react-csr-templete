@@ -104,6 +104,10 @@ const webpackConfig = env => ({
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.less', '.css'],
+    alias: {
+      '~': path.resolve('src/'),
+      '@': path.resolve('src/component/'),
+    },
   },
   mode: env === 'development' ? 'development' : 'production',
   optimization: {},

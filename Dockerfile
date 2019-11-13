@@ -1,5 +1,13 @@
-FROM nginx
+FROM node:7.3.0
 
-COPY ./dist/ /usr/share/nginx/html/
+RUN apt-get update \    && apt-get install -y nginx
+
+WORKDIR /app
+
+COPY . /app/
 
 EXPOSE 80
+
+RUN  npm install \     && npm run build:prod \     && cp -r dist/* /var/www/html \     && rm -rf /app
+
+CMD ["nginx","-g","daemon off;"]

@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "10"
+services:
+  - docker
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install
+
+script:
+  - npm run build:prod
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t lyxcool/react-csr-templete:latest .
+  - docker push lyxcool/react-csr-templete:latest

@@ -4,12 +4,25 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');// js压缩
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // css压缩
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const path = require('path')
+
 const ExtractCSS = new MiniCssExtractPlugin({
   filename: 'css/[name].[hash].css',
   chunkFilename: 'css/[id].[hash].css',
 })
 
-const path = require('path');
+const plugins = [
+  new CleanWebpackPlugin(['dist'], {
+    root: path.resolve(__dirname, '../'),
+    verbose: true,
+  }),
+  ExtractCSS,
+]
+
+if (NODE_ENV !== 'production') {
+  plugins.push(new BundleAnalyzerPlugin())
+}
 
 module.exports = {
   mode: 'production',
@@ -47,12 +60,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'),
-      verbose: true,
-    }),
-    new BundleAnalyzerPlugin(),
-    ExtractCSS,
-  ],
+  plugins,
 };

@@ -12,12 +12,13 @@
     "@babel/plugin-proposal-class-properties",
     ["import", {
       "libraryName": "antd",
-      "style": true,
+      "libraryDirectory": "es",
+      "style": "css"
     }, "antd"],
     ["import", {
       "libraryName": "lyxcool-test",
       "style": true
-    }, "lyxcool-test"],
+    }, "lyxcool-test"]
   ],
   "env": {
     "development": {

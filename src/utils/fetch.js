@@ -19,7 +19,7 @@ const fetch = ({
   }
   return axios(options)
     .then(res => res.data)
-    .catch((err) => {
+    .catch(err => {
       console.warn(err)
     })
 }

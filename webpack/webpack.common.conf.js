@@ -5,7 +5,7 @@ const Dotenv = require('dotenv')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const DotenvWebpack = require('dotenv-webpack');
+const DotenvWebpack = require('dotenv-webpack')
 const productionConfig = require('./webpack.prod.conf.js')
 const developmentConfig = require('./webpack.dev.conf.js')
 
@@ -14,21 +14,21 @@ const envPath = path.resolve(process.cwd(), 'env')
 
 Dotenv.config({
   path: `${envPath}/common.env`,
-});
+})
 
 Dotenv.config({
   path: `${envPath}/${NODE_ENV}.env`,
-});
+})
 
 const commonDot = new DotenvWebpack({
   path: `${envPath}/common.env`,
   systemvars: true,
-});
+})
 
 const nodeEnvDot = new DotenvWebpack({
   path: `${envPath}/${NODE_ENV}.env`,
   systemvars: true,
-});
+})
 
 const webpackConfig = env => ({
   entry: {},
@@ -40,13 +40,13 @@ const webpackConfig = env => ({
   },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-      },
-      { test: /\.js$/, exclude: /(node_modules)/, use: ['babel-loader', 'eslint-loader'] },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   enforce: 'pre',
+      //   loader: 'eslint-loader',
+      //   exclude: /node_modules/,
+      // },
+      { test: /\.js$/, exclude: /(node_modules)/, use: ['babel-loader'] },
       {
         test: /\.css$/,
         use: [
@@ -125,9 +125,9 @@ const webpackConfig = env => ({
     commonDot,
     nodeEnvDot,
   ],
-});
+})
 
-module.exports = (env) => {
-  const config = env === 'production' ? productionConfig : developmentConfig;
-  return merge(webpackConfig(env), config);
-};
+module.exports = env => {
+  const config = env === 'production' ? productionConfig : developmentConfig
+  return merge(webpackConfig(env), config)
+}

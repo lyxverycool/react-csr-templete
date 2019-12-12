@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { hot } from 'react-hot-loader/root';
+import { hot } from 'react-hot-loader/root'
 import { Link } from 'react-router-dom'
-import { Card } from 'antd';
+import { Card } from 'antd'
 import fetch from '~/utils/fetch'
 import screen from '@/ScreenSize'
 import './style.less'
@@ -10,10 +10,10 @@ import './style.less'
 @screen
 class Main extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       message: '',
-    };
+    }
   }
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class Main extends Component {
     const apiUrl = process.env.API_URL
     fetch({
       url: `${apiUrl}/example/testData`,
-    }).then((res) => {
+    }).then(res => {
       if (res.data.code === 1) {
         this.setState({
           message: res.data.message,

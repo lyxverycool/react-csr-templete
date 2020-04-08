@@ -28,4 +28,6 @@
 
 #装了一个自己的组件lyxcool-test,可去掉
 
+#添加了登录注册获取token逻辑 需配合koa-server-templete
+
 #可将webpack部分抽出独立的插件

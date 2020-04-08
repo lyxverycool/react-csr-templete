@@ -18,6 +18,7 @@ const fetch = ({
       t: new Date().getTime(),
     }
   }
+  axios.defaults.crossDomain = true
   axios.defaults.headers.common.Authorization = `Bearer ${getCookie('lyxTooken')}`
   return axios(options)
     .then(res => res.data)

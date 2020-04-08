@@ -1,5 +1,5 @@
 import React from 'react'
-import throttle from '../../utils/index'
+import { throttle } from '../../utils/index'
 
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = React.useState({

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getCookie } from '~/utils'
 
 const fetch = ({
   url, params, method = 'GET', data,
@@ -17,6 +18,7 @@ const fetch = ({
       t: new Date().getTime(),
     }
   }
+  axios.defaults.headers.common.Authorization = `Bearer ${getCookie('lyxTooken')}`
   return axios(options)
     .then(res => res.data)
     .catch(err => {

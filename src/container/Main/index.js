@@ -107,7 +107,7 @@ class Main extends Component {
     const tailLayout = {
       wrapperCol: { offset: 8, span: 16 },
     }
-    // console.log(screenSize)
+    console.log(screenSize)
 
     return (
       <div className="main">

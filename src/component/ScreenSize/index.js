@@ -1,12 +1,12 @@
 import React from 'react'
-import { throttle } from '../../utils/index'
+import { debounce } from '../../utils/index'
 
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = React.useState({
     width: window.innerWidth,
     height: window.innerHeight,
   })
-  const updateScreenSize = throttle(
+  const updateScreenSize = debounce(
     () => {
       setScreenSize({
         width: window.innerWidth,

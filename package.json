@@ -4,6 +4,7 @@
   "description": "csr模板",
   "scripts": {
     "start": "npm run dev",
+    "build": "npm run build:prod",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js",
     "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js",
     "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js",
@@ -12,7 +13,7 @@
   "author": "lyxcool",
   "dependencies": {
     "@loadable/component": "^5.10.2",
-    "antd": "^4.1.1",
+    "antd": "4.1.4",
     "axios": "^0.19.0",
     "lyxcool-test": "^1.0.1",
     "react": "16.8.6",

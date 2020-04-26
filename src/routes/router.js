@@ -1,17 +1,16 @@
 import loadable from '@loadable/component'
 
-const Main = loadable(() => import('../container/Main/index'))
-const List = loadable(() => import('../container/List/index'))
+const loadableCom = name => loadable(() => import(`../container/${name}/index`))
 
 export default [
   {
     path: ['/', '/index'],
     exact: true,
-    component: Main,
+    component: loadableCom('Main')
   },
   {
     path: '/list',
     exact: true,
-    component: List,
+    component: loadableCom('List')
   },
 ]

@@ -38,13 +38,14 @@ export const throttle = (fn, delay) => {
 }
 
 export const getCookie = name => {
-  const reg = new RegExp(`(^| )${name}=([^;] *)(;| $)`)
+  const reg = new RegExp(`(^| )${name}=([^;]*)(;|$)`)
   const arr = document.cookie.match(reg)
   if (arr) {
     return unescape(arr[2])
   }
   return null
 }
+
 
 export const setCookie = (name, value, days, cookieDomain) => {
   let expires = ''

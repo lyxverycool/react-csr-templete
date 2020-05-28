@@ -2,16 +2,8 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const path = require('path')
 const Dotenv = require('dotenv')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const DotenvWebpack = require('dotenv-webpack')
-const productionConfig = require('./webpack.prod.conf.js')
-const developmentConfig = require('./webpack.dev.conf.js')
-
-const NODE_ENV = process.env.NODE_ENV || 'development'
 const envPath = path.resolve(process.cwd(), 'env')
-
+const NODE_ENV = process.env.NODE_ENV || 'development'
 Dotenv.config({
   path: `${envPath}/common.env`,
 })
@@ -19,6 +11,13 @@ Dotenv.config({
 Dotenv.config({
   path: `${envPath}/${NODE_ENV}.env`,
 })
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const DotenvWebpack = require('dotenv-webpack')
+const productionConfig = require('./webpack.prod.conf.js')
+const developmentConfig = require('./webpack.dev.conf.js')
 
 const commonDot = new DotenvWebpack({
   path: `${envPath}/common.env`,
@@ -115,6 +114,7 @@ const webpackConfig = env => ({
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '..', 'src/index.html'),
+      favicon: path.resolve(__dirname, '..', 'src/images/favicon.ico'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,

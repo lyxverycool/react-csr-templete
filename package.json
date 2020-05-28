@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "csr模板",
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run start:dev",
     "build": "npm run build:prod",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --open",
+    "start:dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.common.conf.js --open",
+    "start:prod": "cross-env NODE_ENV=production webpack-dev-server --env development --config webpack/webpack.common.conf.js --open",
     "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.common.conf.js",
     "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.common.conf.js",
     "lint": "eslint --ext .js --ext .jsx src"

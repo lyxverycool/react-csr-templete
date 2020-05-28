@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '../dist/'),
     host: 'localhost',
-    port: 8081,
+    port: process.env.PORT,
     hot: true,
     overlay: true,
     historyApiFallback: true,

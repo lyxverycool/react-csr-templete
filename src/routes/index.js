@@ -9,6 +9,18 @@ class App extends Component {
     this.state = { hasError: false }
   }
 
+  componentDidMount() {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+          console.log('SW registered: ', registration)
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError)
+        })
+      })
+    }
+  }
+
   routeWithSubRoutes = (route, index) => (
     <Route
       key={index}

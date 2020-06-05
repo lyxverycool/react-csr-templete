@@ -15,6 +15,7 @@ Dotenv.config({
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const DotenvWebpack = require('dotenv-webpack')
 const productionConfig = require('./webpack.prod.conf.js')
 const developmentConfig = require('./webpack.dev.conf.js')
@@ -122,6 +123,10 @@ const webpackConfig = env => ({
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru|zh-cn|en/),
     new ProgressBarPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    }),
     commonDot,
     nodeEnvDot,
   ],

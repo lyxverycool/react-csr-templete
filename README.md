@@ -24,10 +24,11 @@
 
 # tips 
 
-#Antd v3.8.4 后版本打包会引入大小差不多为400多k的Icon包，导致体积过大
-
 #装了一个自己的组件lyxcool-test,可去掉
 
-#添加了登录注册获取token逻辑 需配合koa-server-templete
+#用workbox注册了serviceWorker 可去掉
+
+#添加了登录注册获取token逻辑 需配合我的项目koa-server-templete
 
 #可将webpack部分抽出独立的插件
+

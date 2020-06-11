@@ -1,6 +1,6 @@
 import loadable from '@loadable/component'
 
-const loadableCom = name => loadable(() => import(`../container/${name}/index`))
+const loadableCom = name => loadable(() => import(/* webpackChunkName: "[request]"*/`../container/${name}/index`))
 
 export default [
   {

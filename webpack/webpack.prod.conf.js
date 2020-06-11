@@ -9,7 +9,7 @@ const path = require('path')
 
 const ExtractCSS = new MiniCssExtractPlugin({
   filename: 'css/[name].[hash].css',
-  chunkFilename: 'css/[id].[hash].css',
+  chunkFilename: 'css/[name].[hash].css',
 })
 
 const plugins = [
@@ -57,6 +57,12 @@ module.exports = {
           test: 'vendor',
           enforce: true,
         },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
       },
     },
   },

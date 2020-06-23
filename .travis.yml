@@ -5,7 +5,7 @@ services:
   - docker
 branches:
   only:
-    - master
+    - tags
 
 before_install:
   - npm install

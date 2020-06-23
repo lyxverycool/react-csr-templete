@@ -3,9 +3,10 @@ node_js:
   - "10"
 services:
   - docker
-branches:
-  only:
-    - master
+  
+deploy:
+  on:
+    tags: true
 
 before_install:
   - npm install

@@ -3,8 +3,9 @@ node_js:
   - "10"
 services:
   - docker
-  
+
 deploy:
+  provider: npm
   on:
     tags: true
 

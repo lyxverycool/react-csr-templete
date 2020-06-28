@@ -1,3 +1,3 @@
-const webpackConfig = require('lyxcool-webpack')
+const { webpackConfig } = require('lyxcool-webpack')
 
 module.exports = webpackConfig

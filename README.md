@@ -28,14 +28,14 @@
 
 #用workbox注册了serviceWorker 可去掉
 
-#添加了登录注册获取token逻辑 需配合项目
+#添加了登录注册获取token逻辑 可去掉 需配合项目
 [https://github.com/lyxverycool/koa-server-templete](https://github.com/lyxverycool/koa-server-templete)
 
 #可将webpack部分抽出独立的插件 已抽离 
 [https://github.com/lyxverycool/lyxcool-webpack](https://github.com/lyxverycool/lyxcool-webpack)
 
-由于我是用了webpack-merge 导出的webpack配置文件,这就带来一个问题，webpack.config.js导出的其实是一个变量为
+最初是用了webpack-merge 导出webpack配置文件,这就带来一个问题，webpack.config.js导出的其实是一个变量为
 env的匿名函数,而并非是一个对象。这个函数执行之后才是我们想要的webpack配置文件，所以通过修改webpack.config.js
-来修改webpack配置是很困难的一件事。解决方法是：不用webpack-merge,针对dev和prod写两份配置文件，输出为对象而
+来修改webpack配置是很困难的一件事。解决方法是：不用webpack-merge,使用cross-env设置webpack环境变量，输出为对象而
 非函数。这样就可以通过修改webpack.config.js 来扩展webpack配置了。
 

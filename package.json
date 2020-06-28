@@ -5,10 +5,10 @@
   "scripts": {
     "start": "npm run start:dev",
     "build": "npm run build:prod",
-    "start:dev": "cross-env NODE_ENV=development webpack-dev-server --env development --config webpack/webpack.config.js --open",
-    "start:prod": "cross-env NODE_ENV=production webpack-dev-server --env development --config webpack/webpack.config.js --open",
-    "build:dev": "cross-env NODE_ENV=development webpack --env production --config webpack/webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --env production --config webpack/webpack.config.js",
+    "start:dev": "cross-env NODE_ENV=development DEV_SERVER=true webpack-dev-server --config webpack/webpack.config.js --open",
+    "start:prod": "cross-env NODE_ENV=production DEV_SERVER=true webpack-dev-server --config webpack/webpack.config.js --open",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.js",
     "lint": "eslint --ext .js --ext .jsx src"
   },
   "author": "lyxcool",
@@ -17,7 +17,7 @@
     "antd": "4.1.4",
     "axios": "^0.19.0",
     "lyxcool-test": "^1.0.1",
-    "lyxcool-webpack": "1.0.2",
+    "lyxcool-webpack": "1.0.3",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router": "5.0.0",

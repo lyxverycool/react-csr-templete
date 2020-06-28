@@ -1,5 +1,5 @@
 import React from 'react'
-import { debounce } from '../../utils/index'
+import { debounce } from '~/utils/index'
 
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = React.useState({

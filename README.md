@@ -22,6 +22,11 @@
 
 `env==production 打包在dist 目录下`
 
+### 自动化
+
+最初是用travis做自动化。但其实后来的github action 感觉更好用些，而且对私有项目支持比较友好。
+这里是push tag的时候去触发action.
+
 ### tips 
 
 #装了一个自己的组件lyxcool-test,可去掉

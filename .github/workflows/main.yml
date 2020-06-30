@@ -1,8 +1,8 @@
 name: deploy react-csr-templete images
 on:
   push:
-    branches:
-      - master
+    tags:
+    -
 jobs:
   build:
     runs-on: ubuntu-latest

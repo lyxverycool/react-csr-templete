@@ -1,6 +1,6 @@
 {
   "name": "csr-templete",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "csr模板",
   "scripts": {
     "start": "npm run start:dev",

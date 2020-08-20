@@ -44,3 +44,5 @@ env的匿名函数,而并非是一个对象。这个函数执行之后才是我�
 来修改webpack配置是很困难的一件事。解决方法是：不用webpack-merge,使用cross-env设置webpack环境变量，输出为对象而
 非函数。这样就可以通过修改webpack.config.js 来扩展webpack配置了。
 
+#随着项目的增大，webpack在dev模式下打包的时间会越来越长，比较明显的优化方法是在开发环境下不要分割代码，用同步的方式
+去require 组件。可降低差不多一半的时间。方法：配置 "dynamic-import-node-babel-7" 已在lyxcool-webpack 安装该babel

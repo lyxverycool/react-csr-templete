@@ -24,6 +24,7 @@
     "development": {
       "plugins": [
         "react-hot-loader/babel",
+        "dynamic-import-node-babel-7"
       ]
     }
   }

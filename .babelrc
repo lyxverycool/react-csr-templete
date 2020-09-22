@@ -1,5 +1,5 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "presets": ["@babel/preset-env", "@babel/typescript", "@babel/preset-react"],
   "plugins": [
     [
       "@babel/plugin-proposal-decorators",
@@ -13,7 +13,7 @@
     ["import", {
       "libraryName": "antd",
       "libraryDirectory": "es",
-      "style": "css"
+      "style": true
     }, "antd"],
     ["import", {
       "libraryName": "lyxcool-test",

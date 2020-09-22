@@ -12,7 +12,7 @@ const useScreenSize = () => {
         width: window.innerWidth,
         height: window.innerHeight,
       })
-    }, 300,
+    }, 300
   )
   React.useEffect(() => {
     window.addEventListener('resize', updateScreenSize)

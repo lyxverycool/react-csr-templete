@@ -1,11 +1,16 @@
 // 防抖
 
-export const debounce = (fn, delay = 500) => {
-  let timer = null
+interface debArg {
+  fn: any,
+  delay?: any
+}
 
+export const debounce = (params: debArg) => {
+  let timer = null
+  const { fn, delay } = params
   return () => {
     const context = this
-    const args = arguments
+    const args = params
     // 如果此时存在定时器的话，则取消之前的定时器重新记时
     if (timer) {
       clearTimeout(timer)
@@ -21,12 +26,12 @@ export const debounce = (fn, delay = 500) => {
 // 节流
 
 // 函数节流的实现;
-export const throttle = (fn, delay) => {
+export const throttle = (params: debArg) => {
   let preTime = Date.now()
-
+  const { fn, delay } = params
   return () => {
     const context = this
-    const args = arguments
+    const args = params
     const nowTime = Date.now()
 
     // 如果两次时间间隔超过了指定时间，则执行函数。

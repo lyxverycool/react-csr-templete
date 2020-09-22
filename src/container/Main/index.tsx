@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
+import { FormInstance } from 'antd/lib/form';
 import { hot } from 'react-hot-loader/root'
 import { Link } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Card, message } from 'antd'
-import screen from '@/ScreenSize'
+// import screen from '@/ScreenSize'
 import fetch from '~/utils/fetch'
 import './style.less'
 
-@hot
-@screen
-class Main extends Component {
-  formRef = React.createRef();
+interface Props {
+}
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: '',
-      status: 'login',
-      user: {
-        name: '',
-        age: ''
-      }
+interface State {
+  message: string,
+  status: string,
+  user: any
+}
+
+@hot
+class Main extends Component<Props, State>{
+  formRef = React.createRef<FormInstance>()
+  state: State = {
+    message: '',
+    status: 'login',
+    user: {
+      username: '',
+      age: ''
     }
   }
 
@@ -98,7 +103,7 @@ class Main extends Component {
   }
 
   render() {
-    const { screenSize } = this.props
+    // const { screenSize } = this.props
     const { status, user } = this.state
     const layout = {
       labelCol: { span: 8 },
@@ -107,11 +112,10 @@ class Main extends Component {
     const tailLayout = {
       wrapperCol: { offset: 8, span: 16 },
     }
-    console.log(screenSize)
+    // console.log(screenSize)
 
     return (
       <div className="main">
-        <br />
         {this.state.message}
         {
           !user.username && (
@@ -120,8 +124,6 @@ class Main extends Component {
               ref={this.formRef}
               name="basic"
               initialValues={{ remember: true }}
-              onFinish={values => this.onFinish(values)}
-              onFinishFailed={errorInfo => this.onFinishFailed(errorInfo)}
             >
               <Form.Item
                 label="Username"
@@ -184,7 +186,7 @@ class Main extends Component {
               <p>用户信息</p>
               <p>{user.username}</p>
               <p>{user.age}</p>
-             </Card>)}
+            </Card>)}
         </div>
       </div>
     )

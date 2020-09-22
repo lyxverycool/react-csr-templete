@@ -1,26 +1,26 @@
 import axios from 'axios'
 import { getCookie } from '~/utils'
 
-const fetch = ({
-  url, params, method = 'GET', data,
-}) => {
-  const options = {
-    url,
-    method,
-    params,
-    data,
-    timeout: 10000,
-    withCredentials: true,
-  }
-  if (method === 'GET') {
+interface RequestFace {
+  url: string,
+  params?: any
+  method?: string
+  withCredentials?: boolean
+  data?: any
+  timeout?: number
+}
+
+const fetch = (request: RequestFace) => {
+  const options: RequestFace = { ...request }
+  if (options.method === 'GET') {
     options.params = {
       ...options.params,
       t: new Date().getTime(),
     }
   }
-  axios.defaults.crossDomain = true
+  // axios.defaults.crossDomain = true
   axios.defaults.headers.common.Authorization = `Bearer ${getCookie('lyxTooken')}`
-  return axios(options)
+  return axios(options as any)
     .then(res => res.data)
     .catch(err => {
       console.warn(err)

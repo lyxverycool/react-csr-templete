@@ -3,11 +3,12 @@ import { Route, Switch } from 'react-router-dom'
 import routes from './router'
 import '../less/normal.less'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { hasError: false }
-  }
+interface State {
+  hasError: boolean
+}
+
+export default class extends Component<State> {
+  state: State = { hasError: false }
 
   // componentDidMount() {
   //   if ('serviceWorker' in navigator) {
@@ -21,12 +22,12 @@ class App extends Component {
   //   }
   // }
 
-  routeWithSubRoutes = (route, index) => (
+  routeWithSubRoutes = (route: any, index: number) => (
     <Route
       key={index}
       exact={route.exact || false}
       path={route.path}
-      render={props => <route.component {...props} routes={route.routes} />}
+      render={props => < route.component {...props} routes={route.routes} />}
     />
   )
 
@@ -41,7 +42,7 @@ class App extends Component {
   render() {
     if (this.state.hasError) {
       // 你可以自定义降级后的 UI 并渲染
-      return <h1>Sorry,Something went wrong.</h1>
+      return <h1>Sorry, Something went wrong.</h1>
     }
     return (
       <Switch>
@@ -51,4 +52,3 @@ class App extends Component {
   }
 }
 
-export default App

@@ -5,7 +5,7 @@ import App from './routes/index'
 
 const app = document.getElementById('app')
 
-const render = Component => {
+const render = (Component: any) => {
   ReactDOM.render(
     <BrowserRouter>
       <Component />

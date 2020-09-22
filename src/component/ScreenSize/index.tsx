@@ -6,13 +6,18 @@ const useScreenSize = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   })
-  const updateScreenSize = debounce(
-    () => {
+
+  const params = {
+    fn: () => {
       setScreenSize({
         width: window.innerWidth,
         height: window.innerHeight,
       })
-    }, 300
+    },
+    delay: 3000
+  }
+  const updateScreenSize = debounce(
+    params
   )
   React.useEffect(() => {
     window.addEventListener('resize', updateScreenSize)
@@ -23,7 +28,7 @@ const useScreenSize = () => {
   return screenSize
 }
 
-const withScreenSize = Comp => props => {
+const withScreenSize = (Comp: React.FunctionComponent) => (props: any) => {
   const screenSize = useScreenSize()
   return <Comp {...props} screenSize={screenSize} />
 }

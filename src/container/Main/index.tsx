@@ -8,6 +8,7 @@ import fetch from '~/utils/fetch'
 import './style.less'
 
 interface Props {
+  screenSize: object
 }
 
 interface State {

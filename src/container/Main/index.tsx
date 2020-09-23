@@ -3,7 +3,6 @@ import { FormInstance } from 'antd/lib/form';
 import { hot } from 'react-hot-loader/root'
 import { Link } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Card, message } from 'antd'
-// import screen from '@/ScreenSize'
 import fetch from '~/utils/fetch'
 import './style.less'
 
@@ -27,10 +26,6 @@ class Main extends Component<Props, State>{
       username: '',
       age: ''
     }
-  }
-
-  componentDidMount() {
-    // this.getBlog()
   }
 
   getBlog = () => {
@@ -104,7 +99,6 @@ class Main extends Component<Props, State>{
   }
 
   render() {
-    // const { screenSize } = this.props
     const { status, user } = this.state
     const layout = {
       labelCol: { span: 8 },
@@ -113,7 +107,6 @@ class Main extends Component<Props, State>{
     const tailLayout = {
       wrapperCol: { offset: 8, span: 16 },
     }
-    // console.log(screenSize)
 
     return (
       <div className="main">

@@ -1,36 +1,27 @@
-import React from 'react'
-import { debounce } from '~/utils/index'
 
-const useScreenSize = () => {
-  const [screenSize, setScreenSize] = React.useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  })
+import { useEffect, useRef } from 'react';
 
-  const params = {
-    fn: () => {
-      setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    },
-    delay: 3000
-  }
-  const updateScreenSize = debounce(
-    params
-  )
-  React.useEffect(() => {
-    window.addEventListener('resize', updateScreenSize)
-    return () => {
-      window.removeEventListener('resize', updateScreenSize)
+export interface Options {
+  restoreOnUnmount?: boolean;
+}
+
+const DEFAULT_OPTIONS: Options = {
+  restoreOnUnmount: false,
+};
+
+function useTitle(title: string, options: Options = DEFAULT_OPTIONS) {
+  const titleRef = useRef(document.title);
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  useEffect(() => {
+    if (options && options.restoreOnUnmount) {
+      return () => {
+        document.title = titleRef.current;
+      };
     }
-  }, [updateScreenSize])
-  return screenSize
+  }, []);
 }
 
-const withScreenSize = (Comp: React.FunctionComponent) => (props: any) => {
-  const screenSize = useScreenSize()
-  return <Comp {...props} screenSize={screenSize} />
-}
-
-export default withScreenSize
+export default useTitle;

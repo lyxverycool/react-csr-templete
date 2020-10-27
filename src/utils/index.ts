@@ -42,7 +42,7 @@ export const throttle = (params: debArg) => {
   }
 }
 
-export const getCookie = name => {
+export const getCookie = (name: string) => {
   const reg = new RegExp(`(^| )${name}=([^;]*)(;|$)`)
   const arr = document.cookie.match(reg)
   if (arr) {
@@ -52,7 +52,7 @@ export const getCookie = name => {
 }
 
 
-export const setCookie = (name, value, days, cookieDomain) => {
+export const setCookie = (name: string, value: any, days: number, cookieDomain: any) => {
   let expires = ''
   let domain = ''
   if (days) {

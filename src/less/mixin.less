@@ -1,0 +1,22 @@
+.circle(@radius) {
+  width: @radius;
+  height: @radius;
+  border-radius: 50%;
+}
+
+.font(@size, @weight: 400) {
+  font-size: @size;
+  font-weight: @weight;
+}
+
+.wh(@w: 100%, @h: inherit) {
+  width: @w;
+  height: @h;
+}
+
+.flex-mix(@main: start, @cross: flex-start, @dir: row) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @main;
+  align-items: @cross;
+}

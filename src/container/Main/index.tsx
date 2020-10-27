@@ -6,11 +6,11 @@ import { Form, Input, Button, Checkbox, Card, message } from 'antd'
 import fetch from '~/utils/fetch'
 import './style.less'
 
-interface Props {
+type Props = {
   screenSize: object
 }
 
-interface State {
+type State = {
   message: string,
   status: string,
   user: any

@@ -6,7 +6,7 @@ interface debArg {
 }
 
 export const debounce = (params: debArg) => {
-  let timer = null
+  let timer: NodeJS.Timeout | null = null
   const { fn, delay } = params
   return () => {
     const context = this

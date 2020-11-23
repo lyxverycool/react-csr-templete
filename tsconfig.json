@@ -1,5 +1,4 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -8,12 +7,13 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
+    // "strict": true,
     "baseUrl": ".",
     "lib": [
       "dom",

@@ -1,6 +1,5 @@
 
 import React from 'react'
-// import { LyxHeader } from 'lyxcool-test'
 import useTitle from '@/UseTitle'
 import useFetch from '@/UseFetch'
 import './style.less'
@@ -12,7 +11,6 @@ const List = () => {
   return (
     <div className="list">
       <img src={require('../../images/avatar.jpg')} alt="" />
-      {/* <LyxHeader lang="zh_CN" title="test" /> */}
     </div>
   )
 }

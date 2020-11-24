@@ -31,7 +31,7 @@ export default class extends Component<State> {
     />
   )
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: any, info: any) {
     this.setState({
       hasError: true
     })

@@ -54,7 +54,7 @@ class Main extends Component<Props, State>{
     })
   }
 
-  setStatus = status => {
+  setStatus = (status: string) => {
     this.setState({
       status
     })
@@ -62,7 +62,8 @@ class Main extends Component<Props, State>{
 
   async login() {
     try {
-      const userInfo = await this.formRef.current.validateFields()
+      const ref = this.formRef.current!
+      const userInfo = await ref.validateFields()
       const apiUrl = 'http://localhost:3000/api'
       fetch({
         url: `${apiUrl}/admin/login`,
@@ -80,7 +81,8 @@ class Main extends Component<Props, State>{
 
   async register() {
     try {
-      const userInfo = await this.formRef.current.validateFields()
+      const ref = this.formRef.current!
+      const userInfo = await ref.validateFields()
       const apiUrl = 'http://localhost:3000/api'
       fetch({
         url: `${apiUrl}/admin/register`,

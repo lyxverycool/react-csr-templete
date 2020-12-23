@@ -32,6 +32,10 @@ export default class extends Component<State> {
   )
 
   componentDidCatch(error: any, info: any) {
+    if (String(error).includes('Loading chunk')) {
+      window.location.reload();
+      return
+    }
     this.setState({
       hasError: true
     })

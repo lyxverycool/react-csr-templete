@@ -14,8 +14,6 @@
 
 `npm run start || npm run dev`  
 
-`env==development react-hot-loader热更新`
-
 ### 构建
 
 `npm run build` 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { FormInstance } from 'antd/lib/form';
-import { hot } from 'react-hot-loader/root'
 import { Link } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Card, message } from 'antd'
 import fetch from '~/utils/fetch'
@@ -16,7 +15,6 @@ type State = {
   user: any
 }
 
-@hot
 class Main extends Component<Props, State>{
   formRef = React.createRef<FormInstance>()
   state: State = {
